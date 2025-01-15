@@ -107,29 +107,15 @@ public class MordModFix
     }
 
 
-    static String? GetExecutablePath()
+    static String GetExecutablePath()
     {
-        Assembly? entryAssembly = System.Reflection.Assembly.GetEntryAssembly();
-
-        if (entryAssembly != null)
-        {
-            return Path.GetDirectoryName(entryAssembly.Location);
-        }
-
-        return null;
+        return System.AppContext.BaseDirectory;
     }
 
 
     static String? GetConfig()
     {
-        String? executablePath = GetExecutablePath();
-        
-        if (executablePath is null)
-        {
-            Console.WriteLine("Could not determine executable path");
-            return null;
-        }
-
+        String executablePath = GetExecutablePath();
         String configPath = executablePath + "/" + CONFIG_FILENAME;
         return File.Exists(configPath) ? configPath : null;
     }
