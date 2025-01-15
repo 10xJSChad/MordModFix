@@ -10,6 +10,10 @@ Usage:
 3. Set your Mordhau game path in game-path.txt
 4. Run MordModFix.exe
 
+Linux:
+I built this on Linux, and that's the platform it was primarily tested on. Linux binaries are not provided, but MordModFix will work just fine if built for Linux.
+If you are using MordModFix on Linux and would prefer to not have to keep it in the same directory as game-path.txt, you can also put your path in ~/.config/mordmodfix.
+
 Building:
 
 ```dotnet build```
