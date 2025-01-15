@@ -97,7 +97,7 @@ public class Mod
     }
 
 
-    private long _StatFileDate(FileInfo fileInfo, TimestampType timestamp_type)
+    private long _StatFileDate(FileInfo fileInfo, TimestampType timestampType)
     {
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
         {
@@ -106,7 +106,7 @@ public class Mod
             {
                 ArgumentList = {
                     "-c",
-                    timestamp_type == TimestampType.Created ? "%W" : "%Y",
+                    timestampType == TimestampType.Created ? "%W" : "%Y",
                     fileInfo.FullName
                 }
             };
@@ -134,7 +134,7 @@ public class Mod
         }
         else
         {
-            if (timestamp_type == TimestampType.Created)
+            if (timestampType == TimestampType.Created)
             {
                 return ((DateTimeOffset) fileInfo.CreationTimeUtc).ToUnixTimeSeconds(); 
             }
