@@ -182,7 +182,7 @@ public class MordModFix
     { 
         if (!SetModsPath())
         {
-            return;
+            goto end;
         }
 
 
